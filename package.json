@@ -1,0 +1,10 @@
+{
+  "name": "with-import-map-package",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "app",
+    "ui-lib",
+    "generated"
+  ]
+}

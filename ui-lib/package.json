@@ -1,0 +1,53 @@
+{
+  "name": "@acme/react",
+  "version": "0.0.0",
+  "private": true,
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": "./dist/index.js"
+    },
+    "./preset": {
+      "source": "./src/preset.ts",
+      "types": "./dist/preset.d.ts",
+      "import": {
+        "types": "./dist/preset.d.mts",
+        "default": "./dist/preset.mjs"
+      },
+      "require": "./dist/preset.js"
+    }
+  },
+  "scripts": {
+    "prepare": "yarn panda codegen",
+    "build": "tsup",
+    "build-fast": "tsup --no-dts",
+    "dev": "yarn build-fast --watch",
+    "fmt": "prettier --write ."
+  },
+  "dependencies": {
+    "@acme/ui-lib": "*",
+    "@ark-ui/react": "^2.2.3",
+    "prettier": "^2.8.8",
+    "tsup": "7.1.0",
+    "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.35.0",
+    "@park-ui/panda-preset": "^0.36.1",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
